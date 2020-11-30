@@ -1,0 +1,17 @@
+server:
+  servlet:
+    context-path: /api/claim
+
+logging:
+  level:
+    root: ${ROOT_LOG_LEVEL:ERROR}
+    org.springframework: ${SPRING_LOG_LEVEL:ERROR}
+    ru.otpbank.cards.claim: ${APP_LOG_LEVEL:DEBUG}
+
+camunda.bpm:
+  admin-user:
+    id: admin
+    password: admin
+    firstName: admin
+  filter:
+    create: All tasks

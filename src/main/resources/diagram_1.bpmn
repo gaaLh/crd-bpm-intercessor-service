@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0mcovmk" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.4.0">
+  <bpmn:process id="my" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_18a3h2r</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:task id="Activity_14axuyw" name="ggG">
+      <bpmn:extensionElements>
+        <camunda:executionListener class="ru.otpbank.cards.claim.service.ClaimServiceImpl" event="start" />
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_18a3h2r</bpmn:incoming>
+      <bpmn:outgoing>Flow_08xtv4u</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:endEvent id="Event_0agzxe0">
+      <bpmn:incoming>Flow_08xtv4u</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_18a3h2r" sourceRef="StartEvent_1" targetRef="Activity_14axuyw" />
+    <bpmn:sequenceFlow id="Flow_08xtv4u" sourceRef="Activity_14axuyw" targetRef="Event_0agzxe0" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="my">
+      <bpmndi:BPMNEdge id="Flow_08xtv4u_di" bpmnElement="Flow_08xtv4u">
+        <di:waypoint x="400" y="120" />
+        <di:waypoint x="582" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18a3h2r_di" bpmnElement="Flow_18a3h2r">
+        <di:waypoint x="215" y="107" />
+        <di:waypoint x="258" y="107" />
+        <di:waypoint x="258" y="120" />
+        <di:waypoint x="300" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="89" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_14axuyw_di" bpmnElement="Activity_14axuyw">
+        <dc:Bounds x="300" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0agzxe0_di" bpmnElement="Event_0agzxe0">
+        <dc:Bounds x="582" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
